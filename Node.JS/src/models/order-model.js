@@ -57,7 +57,8 @@ export default class Order {
                                         res('Termek azonosito nem letezik!', null);
                                     } else {
                                         conn.query(
-                                            'INSERT INTO `megrendeles` (`termek_azonosito`, `vevo_azonosito`, `mennyiseg`, `vegosszeg`, `megrendeles_datuma`, `utolso_frissites_datuma`, `fizetesi_mod`) ' +
+                                            'INSERT INTO `megrendeles` (`termek_azonosito`, `vevo_azonosito`, `mennyiseg`, `vegosszeg`, `megrendeles_datuma`,' + 
+                                            '`utolso_frissites_datuma`, `fizetesi_mod`) ' +
                                             'VALUES (?,?,1,' +
                                             '(SELECT termek.ar FROM termek WHERE termek.cikkszam = ?),NOW(),NOW(), ?)'         
                                             ,
